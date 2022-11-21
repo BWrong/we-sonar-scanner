@@ -45,13 +45,13 @@ misthin deploy -m all
 ```
 
 ## 说明
-- 下载模板需要使用git，固需要提供相应环境
-- 项目名称会作为`package.json`的`name`值，为了防止特殊字符和中文引起的一些问题，目前仅支持`英文`、`数字`和`-_`
-- 支持多种环境，默认预备了三个，可以自己按照格式添加
-- 构建前可以进行自动打包，**不配置打包命令将跳过打包环节**
-- 可以在覆盖服务器上文件前进行备份，便于在新版本有问题时做回滚，**不配置备份目录将跳过备份环节**
-- 部署目标位置设置： **会先将该目录删除再将新的文件上传到该处**
-- 支持多种登录方式：
-  - `ssh-key`: 推荐使用该方式，不过需要服务器支持，设置`ssh-key`相关信息，在添加环境信息时，不设置密码，将使用`ssh-key`进行连接
-  - 密码：如果环境信息中设置了密码，将使用密码进行登录
-- 除了cli，还可以使用对应软件[MisthinTools](https://github.com/BWrong/misthinTools)
+-Dsonar.projectKey=vue - test
+- Dsonar.branch.name=master
+- Dsonar.host.url=http://10.18.104.127:9000/
+- Dsonar.login=629973df7b9089d7bbbb89f848f0317f5b9f3702
+- Dsonar.projectVersion=1.0.0
+- Dsonar.eslint.reportPaths=/Users/bwrong / WorkSpace / 00.MyStudy / vue - project / eslint - report.json
+
+
+----------------------
+sonar-eslint-scanner -pk vue-test -b master -h http://10.18.104.127:9000/ -l 629973df7b9089d7bbbb89f848f0317f5b9f3702 -pv 1.0.0 -vue 3 -f /Users/bwrong/WorkSpace/00.Misthin/admin-antd-vue3

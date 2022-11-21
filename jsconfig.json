@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "CommonJS",
+    "lib": ["ESNext"],
+    "strict": true,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "useDefineForClassFields": true,
+    "moduleResolution": "node",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "noImplicitAny": false, // 无隐含的any
+    "noImplicitThis": true,
+    "resolveJsonModule": true, // 允许导入json
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "preserveValueImports": true,
+    "importsNotUsedAsValues": "error",
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+  },
+  "exclude": ["node_modules"]
+}

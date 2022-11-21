@@ -1,57 +1,44 @@
 {
-  "name": "misthin-cli",
-  "version": "1.1.2",
+  "name": "sonar-eslint-scanner",
+  "version": "0.0.1",
   "author": "bwrong<ibwrong@foxmail.com>",
   "license": "MIT",
   "keywords": [
-    "misthin",
-    "cli",
-    "vue",
-    "react",
-    "template",
-    "deploy",
-    "electron"
+    "sonar",
+    "eslint"
   ],
-  "description": "misthin-cli脚手架，提供常用项目模板及自动化部署工具，让项目开发更加高效",
-  "main": "index.js",
+  "description": "",
+  "main": "index.cjs",
   "scripts": {
     "pub": "nrm use npm && npm publish && nrm use taobao",
     "commit": "git add . && git-cz",
     "release": "standard-version --infile CHANGELOG.md"
   },
   "bin": {
-    "misthin": "./bin/misthin"
+    "sonar-eslint-scanner": "./bin/sonar-eslint-scanner"
   },
   "publishConfig": {
     "access": "public"
   },
-  "homepage": "https://github.com/BWrong/misthin-cli",
-  "bugs": {
-    "url": "https://github.com/BWrong/misthin-cli/issues",
-    "email": "ibwrong@foxmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/BWrong/misthin-cli"
-  },
+  "homepage": "",
   "engines": {
-    "node": ">=12"
+    "node": ">=16"
   },
   "dependencies": {
-    "chalk": "^4.1.0",
-    "commander": "^7.0.0",
-    "cross-spawn": "^7.0.3",
-    "download-git-repo": "^3.0.2",
-    "figlet": "^1.5.0",
-    "inquirer": "^7.3.3",
-    "node-notifier": "^9.0.0",
-    "node-ssh": "^11.1.1",
-    "ora": "^5.3.0",
-    "shelljs": "^0.8.4",
-    "update-notifier": "^5.0.1"
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "@vanwei/eslint-config": "^1.1.7",
+    "@vue/eslint-config-typescript": "^11.0.2",
+    "commander": "^9.4.1",
+    "eslint": "^8.28.0",
+    "eslint-plugin-sonarjs": "^0.16.0",
+    "eslint-plugin-vue": "^9.7.0",
+    "sonarqube-scanner": "^2.8.2",
+    "typescript": "^4.8.4",
+    "vue-eslint-parser": "^9.1.0"
   },
   "devDependencies": {
-    "standard-version": "^9.0.0"
+    "standard-version": "^9.5.0"
   },
   "config": {
     "commitizen": {

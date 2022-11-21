@@ -1,0 +1,48 @@
+{
+  "root": true,
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "@typescript-eslint/parser",
+    "extraFileExtensions": [".vue"]
+  },
+  "extends": [
+    "@vanwei/eslint-config/typescript",
+    "@vanwei/eslint-config/vue3",
+    "@vue/eslint-config-typescript/recommended"
+  ],
+  "ignorePatterns": [
+    "public/**/*",
+    ".babelrc*",
+    "babel.config.*",
+    "vite.config.*",
+    "vue.config.*",
+    "rollup.config.*",
+    "nuxt.config.*",
+    "jest.config.*",
+    "jsconfig.*",
+    "postcss.config.*",
+    "tailwind.config.*",
+    "tsconfig.*",
+    "tsdoc.*",
+    "unocss.config.*",
+    "vitest.config.*",
+    "windi.config.*",
+    ".browserslist*",
+    "vetur.config.*",
+    "prettier*",
+    ".prettier*",
+    ".editorconfig",
+    "stylelint*",
+    ".eslint*",
+    ".stylelint*",
+    "dist/",
+    "src/assets/",
+    ".vscode/",
+    ".git/",
+    "node_modules/",
+    "mock/",
+    "*.d.ts",
+    "/**/*.d.ts",
+    "types/**/*"
+  ]
+}
