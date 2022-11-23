@@ -1,4 +1,1 @@
-
-module.exports = {
-  extends: ['@vanwei/eslint-config/vue3']
-};
+module.exports= { extends: ['@vanwei/eslint-config/vue3', '@vue/eslint-config-prettier'] };
