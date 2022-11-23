@@ -14,7 +14,7 @@ module.exports = async (opts) => {
   try {
     const { vueVersion = 2, filePath } = opts;
     const params = {
-      // cwd: __dirname,
+      cwd: __dirname,
       errorOnUnmatchedPattern: false, // 在找不到目标文件时抛出错误
       extensions: ['.vue', '.js', '.jsx', '.cjs', '.mjs', '.ts', '.tsx'],
       ignore: true, // eslint.lintFiles()方法不采用.eslintignore文件或ignorePatterns的配置。

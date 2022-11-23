@@ -30,7 +30,7 @@ const { projectKey, branch, host, login, projectVersion, vueVersion = 2, filePat
     name: projectKey,
     ext: '.json'
   });
-  fs.outputJsonSync(reportPath, JSON.parse(eslintReport));
+  fs.outputFileSync(reportPath, eslintReport);
   // 3. sonar扫描
   try {
     const { execa } = await import('execa');

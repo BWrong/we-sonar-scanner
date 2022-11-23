@@ -1,7 +1,0 @@
-projectKey=vue-test
-serverUrl=http://10.18.104.127:9000
-serverVersion=9.1.0.47736
-branch=master
-dashboardUrl=http://10.18.104.127:9000/dashboard?id=vue-test&branch=master
-ceTaskId=AYSinLWfxsl5nFc2sbfO
-ceTaskUrl=http://10.18.104.127:9000/api/ce/task?id=AYSinLWfxsl5nFc2sbfO
