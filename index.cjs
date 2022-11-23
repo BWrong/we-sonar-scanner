@@ -26,7 +26,7 @@ const { projectKey, branch, host, login, projectVersion, vueVersion = 2, filePat
   });
   // 2. 存储报告文件
   const reportPath = path.format({
-    dir: 'reports',
+    dir: path.join(__dirname,'reports'),
     name: projectKey,
     ext: '.json'
   });
