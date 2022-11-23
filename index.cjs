@@ -35,9 +35,9 @@ const { projectKey, branch, host, login, projectVersion, vueVersion = 2, filePat
   try {
     const { execa } = await import('execa');
     const commondParams = [
-      '-Dsonar.sources=' + filePath,
-      '-Dsonar.projectBaseDir=' + filePath,
-      '-Dsonar.working.directory=' + path.join(__dirname,'.scannerwork'),
+      // '-Dsonar.sources=' + filePath,
+      // '-Dsonar.projectBaseDir=' + filePath,
+      // '-Dsonar.working.directory=' + path.join(__dirname,'.scannerwork'),
       '-Dsonar.projectKey=' + projectKey,
       '-Dsonar.branch.name=' + branch,
       '-Dsonar.host.url=' + host,

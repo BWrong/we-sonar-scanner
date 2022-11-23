@@ -1,4 +1,5 @@
-module.exports= {
+module.exports = {
+  root: true,
   parser: 'vue-eslint-parser',
   parserOptions: {
     extraFileExtensions: ['.vue'],
@@ -37,5 +38,4 @@ module.exports= {
     'public/'
   ],
   extends: ['@vanwei/eslint-config/typescript', '@vue/eslint-config-typescript/recommended'],
-  rules: { '@typescript-eslint/no-explicit-any': 1 }
 };
