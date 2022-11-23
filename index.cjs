@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs-extra');
 const { program } = require('commander');
-const eslintScanner = require('./eslint-scanner.cjs');
+const eslintScanner = require('./scanner/eslint-scanner.cjs');
 // 查看版本号
 program.description('通过eslint进行自定义规则扫描，并导入到sonar').version(require('./package.json').version);
 // https://binaries.sonarsource.com/?prefix=Distribution/sonar-scanner-cli/
@@ -35,9 +35,9 @@ const { projectKey, branch, host, login, projectVersion, vueVersion = 2, filePat
   try {
     const { execa } = await import('execa');
     const commondParams = [
-      // '-Dsonar.sources=' + filePath,
-      // '-Dsonar.projectBaseDir=' + filePath,
-      // '-Dsonar.working.directory=' + path.join(__dirname,'.scannerwork'),
+      '-Dsonar.sources=' + filePath,
+      '-Dsonar.projectBaseDir=' + filePath,
+      '-Dsonar.working.directory=' + path.join(__dirname,'.scannerwork'),
       '-Dsonar.projectKey=' + projectKey,
       '-Dsonar.branch.name=' + branch,
       '-Dsonar.host.url=' + host,

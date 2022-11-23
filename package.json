@@ -1,6 +1,6 @@
 {
-  "name": "fe-sonar-scanner",
-  "version": "0.0.1",
+  "name": "@vanwei/fe-sonar-scanner",
+  "version": "0.0.2",
   "author": "bwrong<ibwrong@foxmail.com>",
   "license": "MIT",
   "keywords": [
@@ -14,6 +14,7 @@
     "commit": "git add . && git-cz",
     "release": "standard-version --infile CHANGELOG.md"
   },
+  "files":["./config/*","index.cjs","./scanner/*"],
   "bin": {
     "fe-sonar-scanner": "./bin/fe-sonar-scanner"
   },

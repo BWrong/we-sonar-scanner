@@ -1,15 +1,14 @@
 const path = require('path');
 const { ESLint } = require('eslint');
-const baseConfig = require('./config/base.cjs');
-const vue2Config = require('./config/vue2.cjs');
-const vue3Config = require('./config/vue3.cjs');
+const baseConfig = require('../config/base.cjs');
+const vue2Config = require('../config/vue2.cjs');
+const vue3Config = require('../config/vue3.cjs');
 function getVueConfig(version) {
   const vueConfigMap = {
     2: vue2Config,
     3: vue3Config
   };
-  version ||= 2;
-  return vueConfigMap[version];
+  return vueConfigMap[version] || vue2Config;
 }
 module.exports = async (opts) => {
   try {

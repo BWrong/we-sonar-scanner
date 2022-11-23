@@ -1,10 +1,12 @@
 module.exports = {
   root: true,
   env: {
+    es2022:true,
     node: true
   },
   extends: ['eslint:recommended'],
   parserOptions: {
+    module:'latest',
     ecmaVersion: 2020,
     parser: 'babel-eslint'
   },
