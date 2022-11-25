@@ -1,6 +1,6 @@
 {
   "name": "@vanwei/we-sonar-scanner",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": "bwrong<ibwrong@foxmail.com>",
   "license": "MIT",
   "keywords": [
@@ -11,10 +11,13 @@
   "main": "index.cjs",
   "scripts": {
     "pub": "nrm use npm && npm publish && nrm use taobao",
-    "commit": "git add . && git-cz",
     "release": "standard-version --infile CHANGELOG.md"
   },
-  "files":["./config/*","index.cjs","./scanner/*"],
+  "files": [
+    "index.cjs",
+    "./config/*",
+    "./scanner/*"
+  ],
   "bin": {
     "we-sonar-scanner": "./bin/we-sonar-scanner"
   },
@@ -28,16 +31,16 @@
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
-    "@vanwei/eslint-config": "^1.1.8",
+    "@vanwei/eslint-config": "^1.2.1",
     "@vue/eslint-config-prettier": "^7.0.0",
     "@vue/eslint-config-typescript": "^11.0.2",
     "commander": "^9.4.1",
     "eslint": "^8.28.0",
     "eslint-plugin-sonarjs": "^0.16.0",
-    "eslint-plugin-vue": "^9.7.0",
+    "eslint-plugin-vue": "^9.8.0",
     "execa": "^6.1.0",
     "fs-extra": "^10.1.0",
-    "prettier": "^2.7.1",
+    "prettier": "^2.8.0",
     "typescript": "^4.9.3",
     "vue-eslint-parser": "^9.1.0"
   },
