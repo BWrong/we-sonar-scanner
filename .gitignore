@@ -5,6 +5,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .scannerwork
+reports/
+we-sonar-scanner.tar
 # Editor directories and files
 .idea
 .vscode

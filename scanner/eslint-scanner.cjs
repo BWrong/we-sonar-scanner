@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const { ESLint } = require('eslint');
 const baseConfig = require('../config/base.cjs');
 const vue2Config = require('../config/vue2.cjs');
@@ -16,18 +17,17 @@ module.exports = async (opts) => {
     const params = {
       cwd: __dirname,
       errorOnUnmatchedPattern: false, // 在找不到目标文件时抛出错误
-      extensions: ['.vue', '.js', '.jsx', '.cjs', '.mjs', '.ts', '.tsx'],
-      ignore: true, // eslint.lintFiles()方法不采用.eslintignore文件或ignorePatterns的配置。
-      ignorePath: path.join(filePath, '.eslintignore'),
+      extensions: ['.vue', '.js', '.jsx', '.cjs', '.mjs', '.ts', '.tsx'], // 要检测的文件类型
+      ignore: true, // eslint.lintFiles()方法采用.eslintignore文件或ignorePatterns的配置。
       allowInlineConfig: true, // 允许行内注释指令
-      baseConfig,
+      baseConfig, // 基础配置
       overrideConfig: getVueConfig(vueVersion),
-      // plugins:[],
-      // resolvePluginsRelativeTo: __dirname,
-      // rulePaths: ['./config'],
-      useEslintrc: false,
+      useEslintrc: false, // 使用项目中的配置
       fix: false
     };
+    const ignoreFilePath = path.join(filePath, '.eslintignore');
+    const isPathIgnored = fs.existsSync(ignoreFilePath);
+    isPathIgnored && (params.ignorePath = ignoreFilePath);
     console.log('eslint配置：', params);
     // 1. Create an instance with the `fix` option.
     const eslint = new ESLint(params);
