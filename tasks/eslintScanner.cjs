@@ -1,5 +1,5 @@
 const path = require('path');
-const fs = require('fs');
+const fs = require('fs-extra');
 const { ESLint } = require('eslint');
 const baseConfig = require('../config/base.cjs');
 const vue2Config = require('../config/vue2.cjs');
@@ -13,7 +13,7 @@ function getVueConfig(version) {
 }
 module.exports = async (opts) => {
   try {
-    const { vueVersion = 2, filePath } = opts;
+    const { vueVersion = 2, filePath,reportPath } = opts;
     const params = {
       cwd: __dirname,
       errorOnUnmatchedPattern: false, // 在找不到目标文件时抛出错误
@@ -39,7 +39,7 @@ module.exports = async (opts) => {
     const formatter = await eslint.loadFormatter('json');
     const resultText = formatter.format(results);
     // 5. Output it.
-    return resultText;
+    fs.outputFileSync(reportPath, resultText);
   } catch (error) {
     process.exitCode = 1;
     console.log(error);
