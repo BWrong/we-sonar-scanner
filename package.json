@@ -1,6 +1,6 @@
 {
   "name": "@vanwei/we-sonar-scanner",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "bwrong<ibwrong@foxmail.com>",
   "license": "MIT",
   "keywords": [
@@ -16,7 +16,7 @@
   "files": [
     "index.cjs",
     "./config/*",
-    "./scanner/*"
+    "./tasks/*"
   ],
   "bin": {
     "we-sonar-scanner": "./bin/we-sonar-scanner"

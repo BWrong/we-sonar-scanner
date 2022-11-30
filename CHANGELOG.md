@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/compare/v0.1.1...v0.1.2) (2022-11-30)
+
 ### [0.1.1](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/compare/v0.0.6...v0.1.1) (2022-11-30)
 
 
