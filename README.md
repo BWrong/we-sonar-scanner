@@ -20,5 +20,5 @@ Options:
 ## TODO
 - [x] 对Vue3 setup script支持，需要server段升级
 - [x] 样式文件支持，使用sonar默认规则
-- [] 支持单元测试和覆盖率上报
+- [x] 支持单元测试和覆盖率上报
 - [] 将sonarqube-scanner作为本地依赖
