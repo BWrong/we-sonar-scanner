@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.3](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/compare/v0.1.1...v0.1.3) (2022-12-01)
+
+
+### Bug Fixes
+
+* 调整任务执行顺序 ([d19ea6d](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/commit/d19ea6de5d3df046354db949cc83c9e0d2bb819d))
+
 ### [0.1.2](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/compare/v0.1.1...v0.1.2) (2022-11-30)
 
 ### [0.1.1](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/compare/v0.0.6...v0.1.1) (2022-11-30)
