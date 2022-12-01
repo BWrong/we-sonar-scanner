@@ -48,21 +48,21 @@ const lintReportPath = path.format({
     process.exitCode = 1;
     return;
   }
-  Promise.all([
+  // Promise.all([
     // 1. eslint扫描
-    eslintScanner({
+    await eslintScanner({
       vueVersion,
       filePath,
       reportPath: lintReportPath
     }),
     // 2. 执行单元测试
-    testRunner({
+    await testRunner({
       filePath,
       lcovReportPaths,
       testExecutionReportPaths,
       testScript
-    })
-  ]).then(async () => {
+    });
+  // ]).then(async () => {
     // 3. sonar扫描并上传
     await sonarRunner({
       projectKey,
@@ -75,7 +75,7 @@ const lintReportPath = path.format({
       lcovReportPaths,
       testExecutionReportPaths
     });
-  });
+  // });
 })().catch((error) => {
   process.exitCode = 1;
   console.error(error);
