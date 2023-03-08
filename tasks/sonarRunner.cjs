@@ -29,7 +29,7 @@ const { projectKey, branch, host, login, projectVersion, filePath,lintReportPath
       '-Dsonar.test.inclusions= src/**/*.spec.*,src/**/*.test.*',
       '-Dsonar.tests=src',
       '-Dsonar.exclusions=' + ignorePatternsStr,
-      '-Dsonar.sourceEncoding=zh_CN.UTF-8'
+      '-Dsonar.sourceEncoding=en_US.UTF-8'
     ];
     if (debug) {
       commondParams.push('--debug');
