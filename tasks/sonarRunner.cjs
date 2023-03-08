@@ -1,23 +1,39 @@
 const path = require('path');
 const fs = require('fs-extra');
+const ignorePatterns = require('../config/ignorePatterns.cjs');
 module.exports = async (opts) => {
-const { projectKey, branch, host, login, projectVersion, filePath,lintReportPath,lcovReportPaths,testExecutionReportPaths } = opts;
+const { projectKey, branch, host, login, projectVersion, filePath,lintReportPath,lcovReportPaths,testExecutionReportPaths,debug } = opts;
   try {
     const { execa } = await import('execa');
+    const ignoreFilePath = path.join(filePath, '.eslintignore');
+    const isPathIgnored = fs.existsSync(ignoreFilePath);
+    if (isPathIgnored) {
+      let localIgnore = fs.readFileSync(ignoreFilePath)?.toString()?.split(/[\n\r]/) || [];
+      localIgnore = localIgnore.filter(item=>item);
+      ignorePatterns.push(...localIgnore);
+    }
+    const ignorePatternsStr = ignorePatterns.join(',');
     const commondParams = [
       '-Dsonar.sources=' + filePath,
       '-Dsonar.projectBaseDir=' + filePath,
       '-Dsonar.working.directory=' + path.join(__dirname, '../.scannerwork'),
       '-Dsonar.projectKey=' + projectKey,
+      '-Dsonar.projectName=' + projectKey,
       '-Dsonar.branch.name=' + branch,
       '-Dsonar.host.url=' + host,
       '-Dsonar.login=' + login,
       '-Dsonar.projectVersion=' + projectVersion,
-      '-Dsonar.javascript.node.maxspace=4096',
+      '-Dsonar.ws.timeout=180',
+      '-Dsonar.javascript.node.maxspace=8192',
       '-Dsonar.eslint.reportPaths=' + lintReportPath,
       '-Dsonar.test.inclusions= src/**/*.spec.*,src/**/*.test.*',
-      '-Dsonar.tests=src'
+      '-Dsonar.tests=src',
+      '-Dsonar.exclusions=' + ignorePatternsStr,
+      '-Dsonar.sourceEncoding=zh_CN.UTF-8'
     ];
+    if (debug) {
+      commondParams.push('--debug');
+    }
     if (fs.pathExistsSync(path.join(filePath,lcovReportPaths))) {
       commondParams.push('-Dsonar.javascript.lcov.reportPaths=' + lcovReportPaths);
     }

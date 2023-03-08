@@ -13,6 +13,7 @@ function getVueConfig(version) {
 }
 module.exports = async (opts) => {
   try {
+    console.log('开始ESlint扫描...');
     const { vueVersion = 2, filePath,reportPath } = opts;
     const params = {
       cwd: __dirname,
@@ -40,6 +41,7 @@ module.exports = async (opts) => {
     const resultText = formatter.format(results);
     // 5. Output it.
     fs.outputFileSync(reportPath, resultText);
+    console.log('ESlint扫描结束');
   } catch (error) {
     process.exitCode = 1;
     console.log(error);

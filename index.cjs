@@ -19,6 +19,7 @@ program
   .option('-lrp, --lcovReportPaths <value>', '覆盖率报告locv文件位置', './coverage/lcov.info')
   .option('-trp, --testExecutionReportPaths <value>', '单元测试报告文件位置', './coverage/test-report.xml')
   .option('-ts, --testScript <value>', 'package.json中单元测试的script命令', 'test')
+  .option('-d, --debug', '打开调试模式', '')
   .parse();
 console.log('传入参数:', program.opts());
 const {
@@ -32,7 +33,8 @@ const {
   scannerVersion,
   lcovReportPaths,
   testExecutionReportPaths,
-  testScript
+  testScript,
+  debug
 } = program.opts();
 // https://binaries.sonarsource.com/?prefix=Distribution/sonar-scanner-cli/
 process.env.SONAR_SCANNER_VERSION = scannerVersion;
@@ -73,7 +75,8 @@ const lintReportPath = path.format({
       filePath,
       lintReportPath,
       lcovReportPaths,
-      testExecutionReportPaths
+      testExecutionReportPaths,
+      debug
     });
   });
 })().catch((error) => {
