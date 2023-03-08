@@ -4,7 +4,19 @@ const { ESLint } = require('eslint');
 const baseConfig = require('../config/base.cjs');
 const vue2Config = require('../config/vue2.cjs');
 const vue3Config = require('../config/vue3.cjs');
-function getVueConfig(version) {
+function getVueConfig(version, filePath) {
+  const pkgPath = path.join(filePath, 'package.json');
+  if (!version) {
+    if (fs.pathExistsSync(pkgPath)) {
+      const pkgJson = fs.readJsonSync(pkgPath);
+      const vueVersion = pkgJson?.dependencies?.vue || '2';
+      console.log();
+      version = vueVersion.match(/\d+/) + '';
+    } else {
+      version = 2;
+    }
+  }
+  console.log('Vue版本：', version);
   const vueConfigMap = {
     2: vue2Config,
     3: vue3Config
@@ -14,7 +26,7 @@ function getVueConfig(version) {
 module.exports = async (opts) => {
   try {
     console.log('开始ESlint扫描...');
-    const { vueVersion = 2, filePath,reportPath } = opts;
+    const { vueVersion, filePath, reportPath } = opts;
     const params = {
       cwd: __dirname,
       errorOnUnmatchedPattern: false, // 在找不到目标文件时抛出错误
@@ -22,7 +34,7 @@ module.exports = async (opts) => {
       ignore: true, // eslint.lintFiles()方法采用.eslintignore文件或ignorePatterns的配置。
       allowInlineConfig: true, // 允许行内注释指令
       baseConfig, // 基础配置
-      overrideConfig: getVueConfig(vueVersion),
+      overrideConfig: getVueConfig(vueVersion, filePath),
       useEslintrc: false, // 使用项目中的配置
       fix: false
     };
