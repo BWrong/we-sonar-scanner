@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.9](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/compare/v0.1.1...v0.2.9) (2023-04-06)
+
+
+### Features
+
+* 移除对 @vue/eslint-config-prettier 的依赖 ([c6db22d](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/commit/c6db22dd3263345f2f20b02d9b31190cab34438d))
+* 增加vue版本自动检测 ([6beeb7a](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/commit/6beeb7a821b8e9b0f0dfd1f1af4db604bb3b6f78))
+
+
+### Bug Fixes
+
+* 调整任务执行顺序 ([d19ea6d](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/commit/d19ea6de5d3df046354db949cc83c9e0d2bb819d))
+* 修复单元测试数据不上报问题 ([db60394](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/commit/db60394939ffdf6cdd0e1ea8d8c7fcba01b7e512))
+* 优化编码 ([60b5ac4](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/commit/60b5ac492a241fb55d7118d98885bd4d07aa0588))
+
 ### [0.1.4](http://10.18.101.167:8081/zd-front/sonar-eslint-scanner/compare/v0.1.3...v0.1.4) (2022-12-01)
 
 
