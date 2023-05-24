@@ -16,6 +16,8 @@ Options:
   -sv, --scannerVersion <value>             使用的sonar scanner的版本 (default: "4.7.0.2747")
   -lrp, --lcovReportPaths <value>           覆盖率报告locv文件位置 (default: "./coverage/lcov.info")
   -trp, --testExecutionReportPaths <value>  单元测试报告文件位置 (default: "./coverage/test-report.xml")
+  -t, --test <value>                        package.json中单元测试的script命令,为空则不执行单元测试(default:"")
+  -d, --debug                               打开调试模式, 默认不开启
 ```
 ## TODO
 - [x] 对Vue3 setup script支持，需要server段升级

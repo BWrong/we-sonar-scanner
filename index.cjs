@@ -18,7 +18,7 @@ program
   .option('-sv, --scannerVersion <value>', '使用的sonar scanner的版本', '4.7.0.2747')
   .option('-lrp, --lcovReportPaths <value>', '覆盖率报告locv文件位置', './coverage/lcov.info')
   .option('-trp, --testExecutionReportPaths <value>', '单元测试报告文件位置', './coverage/test-report.xml')
-  .option('-ts, --testScript <value>', 'package.json中单元测试的script命令', 'test')
+  .option('-t, --test <value>', 'package.json中单元测试的script命令', '')
   .option('-d, --debug', '打开调试模式', '')
   .parse();
 console.log('传入参数:', program.opts());
@@ -33,7 +33,7 @@ const {
   scannerVersion,
   lcovReportPaths,
   testExecutionReportPaths,
-  testScript,
+  test,
   debug
 } = program.opts();
 // https://binaries.sonarsource.com/?prefix=Distribution/sonar-scanner-cli/
@@ -58,11 +58,11 @@ const lintReportPath = path.format({
       reportPath: lintReportPath
     }),
     // 2. 执行单元测试
-    testRunner({
+    test && testRunner({
       filePath,
       lcovReportPaths,
       testExecutionReportPaths,
-      testScript
+      test
     })
   ]).then(async () => {
     // 3. sonar扫描并上传
