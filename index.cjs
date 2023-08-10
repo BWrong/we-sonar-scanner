@@ -47,8 +47,7 @@ const lintReportPath = path.format({
 (async function main() {
   if (!fs.pathExistsSync(filePath)) {
     console.log('warnning：目标位置不存在，结束任务');
-    process.exitCode = 1;
-    return;
+    return process.exit(1);
   }
   Promise.all([
     // 1. eslint扫描
@@ -80,6 +79,6 @@ const lintReportPath = path.format({
     });
   });
 })().catch((error) => {
-  process.exitCode = 1;
   console.error(error);
+  process.exit(1);
 });

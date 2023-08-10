@@ -18,7 +18,7 @@ module.exports = async (opts) => {
     const { execaCommand } = await import('execa');
     await execaCommand(`npm run ${test}`, { cwd: filePath }).stdout.pipe(process.stdout);
   } catch (error) {
-    process.exitCode = 1;
     console.log(error);
+    process.exit(1);
   }
 };

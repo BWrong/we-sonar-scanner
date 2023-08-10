@@ -55,7 +55,7 @@ module.exports = async (opts) => {
     fs.outputFileSync(reportPath, resultText);
     console.log('ESlint扫描结束');
   } catch (error) {
-    process.exitCode = 1;
     console.log(error);
+    process.exit(1);
   }
 };
