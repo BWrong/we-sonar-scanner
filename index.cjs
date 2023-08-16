@@ -38,6 +38,11 @@ const {
 } = program.opts();
 // https://binaries.sonarsource.com/?prefix=Distribution/sonar-scanner-cli/
 process.env.SONAR_SCANNER_VERSION = scannerVersion;
+// 支持中文字符集
+process.env.LC_ALL = 'C.UTF-8';
+process.env.LANG = 'C.UTF-8';
+
+console.log('环境变量:',process.env);
 const lintReportPath = path.format({
   dir: path.join(__dirname, 'reports'),
   name: projectKey,

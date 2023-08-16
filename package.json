@@ -1,6 +1,6 @@
 {
   "name": "@vanwei/we-sonar-scanner",
-  "version": "0.2.13",
+  "version": "1.0.0",
   "author": "bwrong<ibwrong@foxmail.com>",
   "license": "MIT",
   "keywords": [
@@ -37,9 +37,9 @@
     "eslint": "^8.35.0",
     "eslint-plugin-sonarjs": "^0.18.0",
     "eslint-plugin-vue": "^9.9.0",
-    "execa": "^7.0.0",
     "fs-extra": "^11.1.0",
     "prettier": "^2.8.4",
+    "sonarqube-scanner": "^3.0.1",
     "typescript": "^4.9.5",
     "vue-eslint-parser": "^9.1.0"
   },
