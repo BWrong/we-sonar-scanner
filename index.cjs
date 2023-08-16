@@ -15,7 +15,7 @@ program
   .option('-pv, --projectVersion <value>', '项目版本', '1.0.0')
   .option('-vue, --vueVersion <value>', 'vue版本号', '')
   .option('-f, --filePath <value>', '需要扫描文件位置', '/data')
-  .option('-sv, --scannerVersion <value>', '使用的sonar scanner的版本', '4.7.0.2747')
+  .option('-sv, --scannerVersion <value>', '使用的sonar scanner的版本', '4.8.0.2856')
   .option('-lrp, --lcovReportPaths <value>', '覆盖率报告locv文件位置', './coverage/lcov.info')
   .option('-trp, --testExecutionReportPaths <value>', '单元测试报告文件位置', './coverage/test-report.xml')
   .option('-t, --test <value>', 'package.json中单元测试的script命令', '')

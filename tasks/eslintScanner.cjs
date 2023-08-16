@@ -56,6 +56,6 @@ module.exports = async (opts) => {
     console.log('ESlint扫描结束');
   } catch (error) {
     console.log(error);
-    process.exit(1);
+    process.exitCode = 1;
   }
 };

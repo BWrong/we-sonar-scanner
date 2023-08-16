@@ -44,6 +44,6 @@ const { projectKey, branch, host, login, projectVersion, filePath,lintReportPath
     await execa('sonar-scanner', commondParams, { cwd: filePath }).stdout.pipe(process.stdout);
   } catch (error) {
     console.log(error);
-    process.exit(1);
+    process.exitCode = 1;
   }
 };
