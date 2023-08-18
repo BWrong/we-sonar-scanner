@@ -7,7 +7,7 @@ ENV SONAR_SCANNER_MIRROR=https://binaries.sonarsource.com/Distribution/sonar-sca
 # scanner版本
 ENV SONAR_SCANNER_VERSION=4.8.0.2856
 # 安装相关工具
-RUN npm install -g @vanwei/we-sonar-scanner@1.0.0
+RUN npm install -g @vanwei/we-sonar-scanner@1.0.1
 # 拷贝sonar-scanner https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.8.0.2856-linux.zip
 COPY ./sonar-scanner-4.8.0.2856-linux /root/.sonar/native-sonar-scanner/sonar-scanner-4.8.0.2856-linux
 
