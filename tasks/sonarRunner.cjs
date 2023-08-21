@@ -58,8 +58,8 @@ module.exports = async (opts) => {
       'sonar.ws.timeout': '180',
       'sonar.javascript.node.maxspace': '8192',
       'sonar.eslint.reportPaths': lintReportPath,
-      'sonar.test.inclusions': 'src/**/*.spec.*,src/**/*.test.*',
-      'sonar.tests': 'src',
+      // 'sonar.test.inclusions': 'src/**/*.spec.*,src/**/*.test.*',
+      // 'sonar.tests': 'src',
       'sonar.exclusions': ignorePatternsStr,
       'sonar.sourceEncoding': 'UTF-8',
       'sonar.verbose': debug ? 'true' : 'false'
